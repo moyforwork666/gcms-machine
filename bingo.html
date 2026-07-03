@@ -117,7 +117,7 @@ function Sidebar({active,onSelect}){
   return <aside onMouseEnter={()=>setExpanded(true)} onMouseLeave={()=>setExpanded(false)} style={{width:W,height:"100%",flex:"none",background:"var(--menu-bar-base-bg)",display:"flex",flexDirection:"column",color:"var(--menu-bar-item-text)",transition:"width 200ms",position:"relative",zIndex:2}}>
     <div style={{height:64,flex:"none",display:"flex",alignItems:"center",justifyContent:expanded?"flex-start":"center",gap:12,padding:expanded?"0 16px":0,borderBottom:"1px solid rgba(255,255,255,.08)"}}>
       <div style={{width:42,height:42,borderRadius:11,flex:"none",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 1px 4px rgba(0,0,0,.35)"}}><Icon name="setting" size={23} color="var(--menu-bar-base-bg)"/></div>
-      {expanded&&<span style={{font:"800 17px Roboto",color:"#fff",letterSpacing:".04em"}}>GCMS</span>}</div>
+      {expanded&&<span style={{font:"800 17px Roboto",color:"#fff",letterSpacing:".04em"}}>DEMO</span>}</div>
     <div style={{flex:1,overflowY:"auto",overflowX:"hidden",padding:"10px 0"}}>{NAV.map(sec=>{
       if(!expanded){const childOn=sec.children.some(c=>c.label===active);return <div key={sec.label}>
         <div title={sec.label} style={{height:48,position:"relative",display:"flex",alignItems:"center",justifyContent:"center",color:childOn?"var(--menu-bar-item-active-text)":"var(--menu-bar-item-text)"}}
@@ -138,7 +138,7 @@ function Header({page}){
   const hh=String(now.getHours()).padStart(2,"0"),mm=String(now.getMinutes()).padStart(2,"0"),ss=String(now.getSeconds()).padStart(2,"0");
   const d=now.toLocaleDateString("en-GB"),dow=now.toLocaleDateString("en-US",{weekday:"short"}).toUpperCase();
   return <header style={{height:64,flex:"none",background:"var(--header-base-bg)",borderBottom:"1px solid var(--header-divider-color)",padding:"0 24px",display:"flex",alignItems:"center",gap:16}}>
-    <span style={{font:"800 24px Roboto",color:"var(--header-title-dark)",letterSpacing:".02em"}}>A4</span>
+    <span style={{font:"800 24px Roboto",color:"var(--header-title-dark)",letterSpacing:".02em"}}>DEMO</span>
     <div style={{width:1,height:26,background:"var(--header-divider-color)"}}/>
     <div style={{display:"flex",alignItems:"center",gap:9,font:"14px Roboto"}}>
       <span style={{color:"var(--text-subtle)"}}>機台參數管理</span><span style={{color:"var(--text-muted)"}}>/</span>
@@ -554,11 +554,11 @@ const MachinePage=({toast,pageName})=><RecordEditor page={pageName} toast={toast
   columns={[{key:"loc",label:"Location",w:110},{key:"mn",label:"Machine Number",w:150},{key:"sn",label:"Serial Number",w:150},{key:"dn",label:"Denom",w:90,num:true},{key:"game",label:"Game Description",w:200,cell:(r,ctx)=><span style={{display:"inline-flex",alignItems:"center",gap:8,maxWidth:"100%"}}><span style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.game}</span><MachineTypeDetail game={r.game} disabled={!!(ctx&&ctx.editing)} toast={toast}/></span>},{key:"st",label:"Active",w:100,fmt:v=>v?"Active":"Inactive",chip:v=>v?"success":"neutral"}]}
   searchKeys={["loc","mn","sn","game"]} filterDefs={[{key:"game",label:"Game Description",options:["全部","Power Dragon D27","Napoleon","Mermaid"]},{key:"dn",label:"Denom",options:["全部","0.01","0.05"]}]}
   initial={[
-    {_id:1,loc:"A40108",mn:"412375",sn:"32001082",dn:"0.05",gdn:"0.01",game:"Power Dragon D27",st:true,sec:"AA",pay:"I10001",bank:"01",seq:"03",uniq:"",hold:"96.0",maxbet:"0",proto:"SAS",opt:["TKT"],host:["Loyalty Promotion","Player"],rollover:false,lcwat:false,promo:true,seed:"1111",sigdef:"1111",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
-    {_id:2,loc:"A40109",mn:"314521",sn:"15002098",dn:"0.05",gdn:"0.05",game:"Napoleon",st:true,sec:"A4",pay:"",bank:"03",seq:"13",uniq:"",hold:"92.5",maxbet:"100",proto:"SAS",opt:["AFT"],host:["Mystery"],rollover:false,lcwat:false,promo:false,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
-    {_id:3,loc:"A40110",mn:"314522",sn:"15002099",dn:"0.05",gdn:"0.05",game:"Napoleon",st:false,sec:"A4",pay:"",bank:"03",seq:"14",uniq:"",hold:"92.5",maxbet:"100",proto:"SAS",opt:["TKT"],host:[],rollover:false,lcwat:false,promo:false,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
-    {_id:4,loc:"A40111",mn:"314523",sn:"15002100",dn:"0.05",gdn:"0.05",game:"Napoleon",st:true,sec:"A4",pay:"",bank:"03",seq:"15",uniq:"",hold:"92.5",maxbet:"100",proto:"SAS",opt:["AFT"],host:["Progressive"],rollover:false,lcwat:false,promo:true,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
-    {_id:5,loc:"A40201",mn:"314679",sn:"15002105",dn:"0.01",gdn:"0.01",game:"Mermaid",st:true,sec:"A5",pay:"",bank:"04",seq:"01",uniq:"",hold:"90.0",maxbet:"50",proto:"Non-SAS",opt:[],host:["Player"],rollover:false,lcwat:false,promo:false,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""}]}
+    {_id:1,loc:"DM0108",mn:"412375",sn:"32001082",dn:"0.05",gdn:"0.01",game:"Power Dragon D27",st:true,sec:"AA",pay:"I10001",bank:"01",seq:"03",uniq:"",hold:"96.0",maxbet:"0",proto:"SAS",opt:["TKT"],host:["Loyalty Promotion","Player"],rollover:false,lcwat:false,promo:true,seed:"1111",sigdef:"1111",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
+    {_id:2,loc:"DM0109",mn:"314521",sn:"15002098",dn:"0.05",gdn:"0.05",game:"Napoleon",st:true,sec:"DEMO",pay:"",bank:"03",seq:"13",uniq:"",hold:"92.5",maxbet:"100",proto:"SAS",opt:["AFT"],host:["Mystery"],rollover:false,lcwat:false,promo:false,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
+    {_id:3,loc:"DM0110",mn:"314522",sn:"15002099",dn:"0.05",gdn:"0.05",game:"Napoleon",st:false,sec:"DEMO",pay:"",bank:"03",seq:"14",uniq:"",hold:"92.5",maxbet:"100",proto:"SAS",opt:["TKT"],host:[],rollover:false,lcwat:false,promo:false,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
+    {_id:4,loc:"DM0111",mn:"314523",sn:"15002100",dn:"0.05",gdn:"0.05",game:"Napoleon",st:true,sec:"DEMO",pay:"",bank:"03",seq:"15",uniq:"",hold:"92.5",maxbet:"100",proto:"SAS",opt:["AFT"],host:["Progressive"],rollover:false,lcwat:false,promo:true,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""},
+    {_id:5,loc:"DM0201",mn:"314679",sn:"15002105",dn:"0.01",gdn:"0.01",game:"Mermaid",st:true,sec:"A5",pay:"",bank:"04",seq:"01",uniq:"",hold:"90.0",maxbet:"50",proto:"Non-SAS",opt:[],host:["Player"],rollover:false,lcwat:false,promo:false,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""}]}
   makeBlank={()=>({_id:uid(),loc:"",mn:"",sn:"",dn:"0.05",gdn:"0.01",game:"Power Dragon D27",st:true,sec:"",pay:"",bank:"01",seq:"",uniq:"",hold:"",maxbet:"",proto:"SAS",opt:["TKT"],host:[],rollover:false,lcwat:false,promo:false,seed:"",sigdef:"",bsig:"",bres:"",gsig:"",gres:"",gdetail:""})}
   formGroups={[
     {section:"Basic",fields:[{key:"mn",label:"Machine Number",lockEdit:true,required:true},{key:"sn",label:"Serial Number",required:true},{key:"sec",label:"Section Name",required:true},{key:"pay",label:"Pay Table",required:true},{key:"game",label:"Machine Type",type:"select",options:["Power Dragon D27","Napoleon","Mermaid","Jumbo"],required:true},{key:"dn",label:"Machine Denom",type:"select",options:["0.01","0.05","1.00"],lockEdit:true,required:true},{key:"gdn",label:"Game Denom",type:"select",options:["0.01","0.05","1.00"],required:true},{key:"bank",label:"Machine Bank",type:"select",options:["01","02","03","04","05"],required:true},{key:"seq",label:"Seq Number",required:true},{key:"uniq",label:"Unique ID"},{key:"hold",label:"Theoretical Hold",required:true},{key:"maxbet",label:"Max Bet",required:true}]},
@@ -891,7 +891,7 @@ function BingoPage({toast,pageName}){
 
 /* ---- Non-SAS (同機台維護：清單 + 右側編輯卡片) ---- */
 function NonSasPage({toast,pageName}){
-  const [regions,setRegions]=useState(()=>DB.get("nonsasRegions",[{_id:1,id:"1",nm:"A4"},{_id:2,id:"2",nm:"A8"},{_id:3,id:"6",nm:"(未命名)"}]));
+  const [regions,setRegions]=useState(()=>DB.get("nonsasRegions",[{_id:1,id:"1",nm:"DEMO"},{_id:2,id:"2",nm:"A8"},{_id:3,id:"6",nm:"(未命名)"}]));
   const [rsOpen,setRsOpen]=useState(false);
   const ridOpts=["N/A"].concat(regions.map(r=>r.nm));
   const columns=[{key:"mn",label:"MNum",w:150},{key:"loc",label:"Location",w:150},{key:"rid",label:"Region ID",w:150,chip:v=>v==="N/A"?"neutral":"primary"},{key:"mid",label:"Machine ID",w:170}];
@@ -907,9 +907,9 @@ function NonSasPage({toast,pageName}){
       searchKeys={["mn","loc"]}
       filterDefs={[{key:"rid",label:"Region 篩選",options:["全部","N/A"].concat(regions.map(r=>r.nm))}]}
       initial={[
-        {_id:1,mn:"314843",loc:"A40212",rid:"A4",mid:"A40212"},{_id:2,mn:"314829",loc:"A40213",rid:"A4",mid:"A40213"},
-        {_id:3,mn:"314846",loc:"A40215",rid:"A4",mid:"A40215"},{_id:4,mn:"314537",loc:"A40301",rid:"N/A",mid:"N/A"},
-        {_id:5,mn:"314538",loc:"A40302",rid:"N/A",mid:"N/A"},{_id:6,mn:"314539",loc:"A40303",rid:"N/A",mid:"N/A"}]}
+        {_id:1,mn:"314843",loc:"DM0212",rid:"DEMO",mid:"DM0212"},{_id:2,mn:"314829",loc:"DM0213",rid:"DEMO",mid:"DM0213"},
+        {_id:3,mn:"314846",loc:"DM0215",rid:"DEMO",mid:"DM0215"},{_id:4,mn:"314537",loc:"DM0301",rid:"N/A",mid:"N/A"},
+        {_id:5,mn:"314538",loc:"DM0302",rid:"N/A",mid:"N/A"},{_id:6,mn:"314539",loc:"DM0303",rid:"N/A",mid:"N/A"}]}
       makeBlank={()=>({_id:uid(),mn:"",loc:"",rid:"N/A",mid:"N/A"})}
       formGroups={formGroups} batchableKeys={["rid","mid"]}
       extraActions={extra}/>

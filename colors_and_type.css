@@ -1,0 +1,53 @@
+/* ============================================================================
+ * Gama Design System — Fonts + Semantic Type Classes
+ * The numeric tokens live in tokens.css; this file just loads fonts and
+ * defines named, semantic type classes on top of those tokens.
+ * ============================================================================ */
+
+@import url("tokens.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700;1,900&family=Aldrich&display=swap");
+
+/* Page baseline */
+html, body {
+  font-family: var(--typography-family-primary), system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text-primary);
+  background: var(--surface-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* ============= SEMANTIC TYPE CLASSES =============
+ * Roboto is the workhorse; Aldrich is reserved for numeric display
+ * (money totals, clocks, big counters).
+ */
+
+.gama-display-xl  { font: 400 64px/1 var(--typography-family-display); color: var(--money-color); }
+.gama-display-lg  { font: 400 40px/1 var(--typography-family-display); color: var(--money-color); }
+.gama-display-md  { font: 400 28px/1 var(--typography-family-display); color: var(--money-color); }
+.gama-display-sm  { font: 400 20px/1 var(--typography-family-display); color: var(--money-color); }
+
+.gama-h1     { font: 700 32px/1.1  Roboto, sans-serif; color: var(--text-title-strong); letter-spacing: 0; }
+.gama-h2     { font: 700 24px/1.2  Roboto, sans-serif; color: var(--text-title-strong); }
+.gama-h3     { font: 600 22px/1.2  Roboto, sans-serif; color: var(--text-primary); }
+.gama-h4     { font: 700 20px/1.2  Roboto, sans-serif; color: var(--text-primary); }
+.gama-h5     { font: 600 16px/1.2  Roboto, sans-serif; color: var(--text-primary); }
+
+.gama-button { font: 700 16px/1    Roboto, sans-serif; letter-spacing: 0; }
+.gama-label  { font: 500 14px/1    Roboto, sans-serif; color: var(--text-label); }
+.gama-body-lg{ font: 400 16px/1.4  Roboto, sans-serif; color: var(--text-body); }
+.gama-body   { font: 400 14px/1.4  Roboto, sans-serif; color: var(--text-body); }
+.gama-body-sm{ font: 400 13px/1.4  Roboto, sans-serif; color: var(--text-body); }
+.gama-caption{ font: 400 12px/1.3  Roboto, sans-serif; color: var(--text-subtle); }
+.gama-overline { font: 500 10px/1.2 Roboto, sans-serif; color: var(--text-label); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* Convenience text colors */
+.gama-text-primary  { color: var(--text-primary); }
+.gama-text-title    { color: var(--text-title-strong); }
+.gama-text-body     { color: var(--text-body); }
+.gama-text-label    { color: var(--text-label); }
+.gama-text-muted    { color: var(--text-muted); }
+.gama-text-success  { color: var(--text-success); }
+.gama-text-error    { color: var(--text-error); }
+.gama-text-support  { color: var(--text-support); }
+.gama-text-accent   { color: var(--text-accent); }
+.gama-text-on-dark  { color: var(--text-on-dark); }
